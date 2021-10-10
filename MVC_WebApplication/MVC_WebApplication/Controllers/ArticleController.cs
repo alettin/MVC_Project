@@ -13,5 +13,11 @@ namespace MVC_WebApplication.Controllers
         {
             return View();
         }
+
+        public ActionResult ArticleDetails(int ItemId)
+        {
+            var model = "Get article detail from database with parameter";
+            return View("~/Views/Article/ArticleDetails.cshtml", model: model);
+        }
     }
 }

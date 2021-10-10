@@ -26,5 +26,12 @@ namespace MVC_WebApplication.Controllers
 
             return View();
         }
+        public ActionResult PageNotFound()
+        {
+            ViewBag.Message = "Your PageNotFound page.";
+
+            return View();
+        }
+        
     }
 }

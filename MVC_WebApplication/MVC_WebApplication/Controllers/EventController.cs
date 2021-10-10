@@ -14,5 +14,11 @@ namespace MVC_WebApplication.Controllers
             ViewBag.Id = id;
             return View();
         }
+
+        public ActionResult EventDetails(int ItemId)
+        {
+            var model = "Get event detail from database with parameter";
+            return View();
+        }
     }
 }
