@@ -30,7 +30,7 @@ namespace MVC_WebApplication
 
             routes.GenericRoute("GenericUrl",
                 "{generic_se_name}",
-                new { controller = "Home", action = "PageNotFound" },
+                new { controller = "Error", action = "PageNotFound" },
                 null,
                 new[] { "MVC_WebApplication.Controllers" }
                 );
@@ -114,7 +114,7 @@ namespace MVC_WebApplication
 
                 if (urlRecord == null)
                 {
-                    data.Values["controller"] = "Home";
+                    data.Values["controller"] = "Error";
                     data.Values["action"] = "PageNotFound";
                     return data;
                 }
