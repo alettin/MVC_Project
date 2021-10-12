@@ -22,4 +22,11 @@ namespace MVC_WebApplication.Models
         Other = 99
     }
 
+    public enum ExceptionCode
+    {
+        ApplicationError = 600,
+        ViewError = 601,
+        SaveLogError = 602,
+        Default = 699,
+    }
 }

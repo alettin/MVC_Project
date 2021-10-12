@@ -10,9 +10,17 @@ namespace MVC_WebApplication.Controllers
 {
     public class ErrorController : Controller
     {
-        public ActionResult Index()
+        public ActionResult Index(HttpContext httpContext, Exception exception, int errorType = (int)ExceptionCode.Default)
         {
+            var methodName = System.Reflection.MethodBase.GetCurrentMethod().Name;
+            //SaveErrorMessage(httpContext, exception, methodName, errorType);
             return View();
+        }
+
+        private int GetStatusCode(Exception exception)
+        {
+            var httpException = exception as HttpException;
+            return httpException != null ? httpException.GetHttpCode() : (int)HttpStatusCode.InternalServerError;
         }
 
         public ActionResult Unauthorized()
