@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVC_WebApplication.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -18,6 +19,24 @@ namespace MVC_WebApplication.Controllers
         {
             var model = "Get article detail from database with parameter";
             return View("~/Views/Article/ArticleDetails.cshtml", model: model);
+        }
+
+        public ActionResult CreateArticle()
+        {
+            var model = new vmArticle();
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult CreateArticle(vmArticle vmArticle)
+        {
+            //save to database then redirect the page
+            return View("Details",vmArticle);
+        }
+
+        public ActionResult Details()
+        {
+            return View();
         }
     }
 }
