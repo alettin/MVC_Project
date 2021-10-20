@@ -69,7 +69,6 @@ D:\github\MVC_Project\MVC_WebApplication\MVC_WebApplication\bin\System.Web.WebPa
 D:\github\MVC_Project\MVC_WebApplication\MVC_WebApplication\bin\Newtonsoft.Json.xml
 D:\github\MVC_Project\MVC_WebApplication\MVC_WebApplication\bin\Antlr3.Runtime.pdb
 D:\github\MVC_Project\MVC_WebApplication\MVC_WebApplication\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\github\MVC_Project\MVC_WebApplication\MVC_WebApplication\obj\Debug\MVC_WebApplication.csprojAssemblyReference.cache
 D:\github\MVC_Project\MVC_WebApplication\MVC_WebApplication\obj\Debug\MVC_WebApplication.csproj.CoreCompileInputs.cache
 D:\github\MVC_Project\MVC_WebApplication\MVC_WebApplication\obj\Debug\MVC_WebApplication.csproj.CopyComplete
 D:\github\MVC_Project\MVC_WebApplication\MVC_WebApplication\obj\Debug\MVC_WebApplication.dll
