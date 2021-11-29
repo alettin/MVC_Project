@@ -9,7 +9,6 @@ namespace MVC_WebApplication.Controllers
 {
     public class ArticleController : Controller
     {
-        // GET: Article
         public ActionResult Index()
         {
             return View();
@@ -31,12 +30,15 @@ namespace MVC_WebApplication.Controllers
         public ActionResult CreateArticle(vmArticle vmArticle)
         {
             //save to database then redirect the page
-            return View("Details",vmArticle);
+            TempData["model"] = vmArticle;
+            return RedirectToAction("Details");
         }
 
         public ActionResult Details()
         {
-            return View();
+            vmArticle vmArticle = new vmArticle();
+            vmArticle = TempData["model"] as vmArticle;
+            return View(vmArticle);
         }
     }
 }
