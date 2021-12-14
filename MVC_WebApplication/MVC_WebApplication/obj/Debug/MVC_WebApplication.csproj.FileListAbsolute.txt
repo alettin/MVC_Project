@@ -80,3 +80,4 @@ D:\github\MVC_Project\MVC_WebApplication\MVC_WebApplication\obj\Debug\MVC_WebApp
 D:\github\MVC_Project\MVC_WebApplication\MVC_WebApplication\obj\Debug\MVC_WebApplication.csproj.CopyComplete
 D:\github\MVC_Project\MVC_WebApplication\MVC_WebApplication\obj\Debug\MVC_WebApplication.dll
 D:\github\MVC_Project\MVC_WebApplication\MVC_WebApplication\obj\Debug\MVC_WebApplication.pdb
+D:\github\MVC_Project\MVC_WebApplication\MVC_WebApplication\obj\Debug\MVC_WebApplication.csprojAssemblyReference.cache

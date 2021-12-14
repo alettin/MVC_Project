@@ -15,7 +15,7 @@
     <Property Name="MetaTitle" Type="nvarchar(max)" />
     <Property Name="HitCount" Type="int" Nullable="false" />
     <Property Name="CategoryId" Type="int" Nullable="false" />
-    <Property Name="CreateDate" Type="date" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="Category">
     <Key>
@@ -53,7 +53,7 @@ warning 6002: The table/view 'MvcProject.dbo.Event' does not have a primary key 
     <Property Name="MetaTitle" Type="nvarchar(max)" Nullable="false" />
     <Property Name="HitCount" Type="int" Nullable="false" />
     <Property Name="CategoryId" Type="int" Nullable="false" />
-    <Property Name="CreateDate" Type="date" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="SeoUrl">
     <Key>
@@ -64,7 +64,7 @@ warning 6002: The table/view 'MvcProject.dbo.Event' does not have a primary key 
     <Property Name="ItemId" Type="int" Nullable="false" />
     <Property Name="SeoUrl" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="IsActive" Type="bit" Nullable="false" />
-    <Property Name="CreateDate" Type="date" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>

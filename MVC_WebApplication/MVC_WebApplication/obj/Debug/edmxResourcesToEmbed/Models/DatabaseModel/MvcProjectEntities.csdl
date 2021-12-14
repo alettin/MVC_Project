@@ -15,7 +15,7 @@
     <Property Name="MetaTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="HitCount" Type="Int32" Nullable="false" />
     <Property Name="CategoryId" Type="Int32" Nullable="false" />
-    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
     <NavigationProperty Name="Category" Relationship="Self.FK_Article_Category" FromRole="Article" ToRole="Category" />
   </EntityType>
   <EntityType Name="Category">
@@ -39,7 +39,7 @@
     <Property Name="ItemId" Type="Int32" Nullable="false" />
     <Property Name="SeoUrl1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="IsActive" Type="Boolean" Nullable="false" />
-    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
   </EntityType>
   <EntityType Name="sysdiagram">
     <Key>
@@ -75,7 +75,7 @@
     <Property Name="MetaTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="HitCount" Type="Int32" Nullable="false" />
     <Property Name="CategoryId" Type="Int32" Nullable="false" />
-    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
     <NavigationProperty Name="Category" Relationship="Self.FK_Event_Category" FromRole="Event" ToRole="Category" />
   </EntityType>
   <Association Name="FK_Article_Category">
