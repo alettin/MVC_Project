@@ -29,7 +29,7 @@ namespace MVC_WebApplication.Models
 
         public bool AllowComments { get; set; }
 
-        public int CommentCount { get; set; }
+        public int? CommentCount { get; set; }
 
         public string MetaKeywords { get; set; }
 
@@ -38,6 +38,8 @@ namespace MVC_WebApplication.Models
         public string MetaTitle { get; set; }
 
         public int HitCount { get; set; }
+
+        public int CategoryId { get; set; }
 
     }
 }

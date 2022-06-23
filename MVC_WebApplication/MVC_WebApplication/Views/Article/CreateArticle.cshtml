@@ -2,14 +2,16 @@
 
 @{
     ViewBag.Title = "CreateArticle";
+
+
 }
 
 <h2>CreateArticle</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>vmArticle</h4>
         <hr />
@@ -96,6 +98,15 @@
             </div>
         </div>
 
+        <div class="form-group">
+            @Html.LabelFor(model => model.CategoryId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.CategoryId, new List<SelectListItem> { 
+               new SelectListItem { Selected = true, Value = "1", Text = "Technology" }, 
+               new SelectListItem { Selected = false, Value = "2", Text = "Law" } }, new {   @class = "form-control"   })
+                @Html.ValidationMessageFor(model => model.CategoryId, "", new { @class = "text-danger" })
+            </div>
+        </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />
