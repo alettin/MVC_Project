@@ -17,7 +17,7 @@ namespace MVC_WebApplication.Models.DatabaseModel
         public int Id { get; set; }
         public int SystemTable { get; set; }
         public int ItemId { get; set; }
-        public string SeoUrl1 { get; set; }
+        public string Url { get; set; }
         public bool IsActive { get; set; }
         public System.DateTime CreateDate { get; set; }
     }

@@ -8,6 +8,7 @@ namespace MVC_WebApplication.Models
 {
     public class vmArticle
     {
+        public int? Id { get; set; }
         public vmArticle()
         {
             CommentCount = 0;

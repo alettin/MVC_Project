@@ -4,14 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="071918b7ba834d57a147e0813cc253f7" Name="Diagram1">
-        <EntityTypeShape EntityType="MvcProjectModel.Article" Width="1.5" PointX="3" PointY="1.25" />
-        <EntityTypeShape EntityType="MvcProjectModel.Category" Width="1.5" PointX="0.75" PointY="3.875" />
-        <EntityTypeShape EntityType="MvcProjectModel.SeoUrl" Width="1.5" PointX="5.75" PointY="0.75" />
-        <EntityTypeShape EntityType="MvcProjectModel.sysdiagram" Width="1.5" PointX="5.75" PointY="3.75" />
-        <EntityTypeShape EntityType="MvcProjectModel.Event" Width="1.5" PointX="3" PointY="5.5" />
-        <AssociationConnector Association="MvcProjectModel.FK_Article_Category" />
-        <AssociationConnector Association="MvcProjectModel.FK_Event_Category" />
+      <Diagram DiagramId="24012a0180da4cf5b66a71e7dcf7dc7a" Name="Diagram1">
+        <EntityTypeShape EntityType="MvcProjectModel.Article" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcProjectModel.Category" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcProjectModel.SeoUrl" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcProjectModel.sysdiagram" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MvcProjectModel.Event" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <AssociationConnector Association="MvcProjectModel.FK_Article_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="MvcProjectModel.FK_Event_Category" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

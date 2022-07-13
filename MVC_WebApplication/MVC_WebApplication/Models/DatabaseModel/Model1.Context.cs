@@ -13,10 +13,10 @@ namespace MVC_WebApplication.Models.DatabaseModel
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class MvcProjectEntities : DbContext
+    public partial class Entities : DbContext
     {
-        public MvcProjectEntities()
-            : base("name=MvcProjectEntities")
+        public Entities()
+            : base("name=Entities")
         {
         }
     

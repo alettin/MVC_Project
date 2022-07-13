@@ -62,7 +62,7 @@ warning 6002: The table/view 'MvcProject.dbo.Events' does not have a primary key
     <Property Name="Id" Type="int" Nullable="false" />
     <Property Name="SystemTable" Type="int" Nullable="false" />
     <Property Name="ItemId" Type="int" Nullable="false" />
-    <Property Name="SeoUrl1" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Url" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="IsActive" Type="bit" Nullable="false" />
     <Property Name="CreateDate" Type="datetime" Nullable="false" />
   </EntityType>
