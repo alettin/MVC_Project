@@ -29,4 +29,10 @@ namespace MVC_WebApplication.Models
         SaveLogError = 602,
         Default = 699,
     }
+    public enum LogType
+    {
+        Login = 1,
+        Action= 2,
+        Error = 3
+    }
 }

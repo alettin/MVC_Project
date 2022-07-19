@@ -1,4 +1,6 @@
 ﻿using MVC_WebApplication.Models;
+using MVC_WebApplication.Models.DatabaseModel;
+using MVC_WebApplication.MvcFilter;
 //using MVC_WebApplication.Models.DatabaseModel;
 using System;
 using System.Collections.Generic;
@@ -15,15 +17,17 @@ namespace MVC_WebApplication.Controllers
     {
         public ActionResult Index()
         {
+
             var list = new List<vmArticle>();
+
             DataTable datatable = new DataTable();
 
             using (SqlConnection sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["MvcProjectEntities"].ConnectionString))
             {
                 string sqlQuery = "SELECT a.[Id],[Title],[Short],[Long],[MetaKeywords],[MetaDescription],[MetaTitle],[HitCount], u.Url,c.Name FROM[MvcProject].[dbo].[Articles] a,[dbo].[SeoUrls] u,[dbo].[Categories] c where a.Id = u.ItemId and u.SystemTable = 1 and a.CategoryId = c.Id";
-                SqlCommand sqlCommand = new SqlCommand(sqlQuery,sqlConnection);
+                SqlCommand sqlCommand = new SqlCommand(sqlQuery, sqlConnection);
                 sqlConnection.Open();
-                
+
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
                 sqlDataAdapter.Fill(datatable);
                 sqlConnection.Close();
@@ -31,12 +35,19 @@ namespace MVC_WebApplication.Controllers
 
             }
 
-            list = (from DataRow dr in datatable.Rows select new vmArticle() {
-                Id = Convert.ToInt32(dr["Id"]), Title = dr["Title"].ToString(), Short= dr["Short"].ToString(),
-                Full = dr["Long"].ToString(),MetaKeywords = dr["MetaKeywords"].ToString(), 
-                MetaDescription = dr["MetaDescription"].ToString(), MetaTitle = dr["MetaTitle"].ToString(),
-                HitCount = Convert.ToInt32(dr["HitCount"]), SeoUrl = dr["Url"].ToString()
-            }).ToList();
+            list = (from DataRow dr in datatable.Rows
+                    select new vmArticle()
+                    {
+                        Id = Convert.ToInt32(dr["Id"]),
+                        Title = dr["Title"].ToString(),
+                        Short = dr["Short"].ToString(),
+                        Full = dr["Long"].ToString(),
+                        MetaKeywords = dr["MetaKeywords"].ToString(),
+                        MetaDescription = dr["MetaDescription"].ToString(),
+                        MetaTitle = dr["MetaTitle"].ToString(),
+                        HitCount = Convert.ToInt32(dr["HitCount"]),
+                        SeoUrl = dr["Url"].ToString()
+                    }).ToList();
 
             return View(list);
         }
@@ -92,6 +103,7 @@ namespace MVC_WebApplication.Controllers
             return RedirectToAction("Details");
         }
 
+        [LogAction("Article details action executed.", LogType.Action)]
         public ActionResult Details(int id)
         {
             var model = new vmArticle();
@@ -100,7 +112,7 @@ namespace MVC_WebApplication.Controllers
             {
                 string sqlQuery = "SELECT a.[Id],[Title],[Short],[Long],[MetaKeywords],[MetaDescription],[MetaTitle],[HitCount], u.Url,c.Name FROM[MvcProject].[dbo].[Articles] a,[dbo].[SeoUrls] u,[dbo].[Categories] c where a.Id = u.ItemId and u.SystemTable = 1 and a.CategoryId = c.Id and a.Id = @Id";
                 SqlCommand sqlCommand = new SqlCommand(sqlQuery, sqlConnection);
-                sqlCommand.Parameters.AddWithValue("Id",id);
+                sqlCommand.Parameters.AddWithValue("Id", id);
                 sqlConnection.Open();
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
                 sqlDataAdapter.Fill(datatable);
@@ -109,18 +121,18 @@ namespace MVC_WebApplication.Controllers
             }
 
             model = (from DataRow dr in datatable.Rows
-                    select new vmArticle()
-                    {
-                        Id = Convert.ToInt32(dr["Id"]),
-                        Title = dr["Title"].ToString(),
-                        Short = dr["Short"].ToString(),
-                        Full = dr["Long"].ToString(),
-                        MetaKeywords = dr["MetaKeywords"].ToString(),
-                        MetaDescription = dr["MetaDescription"].ToString(),
-                        MetaTitle = dr["MetaTitle"].ToString(),
-                        HitCount = Convert.ToInt32(dr["HitCount"]),
-                        SeoUrl = dr["Url"].ToString()
-                    }).FirstOrDefault();
+                     select new vmArticle()
+                     {
+                         Id = Convert.ToInt32(dr["Id"]),
+                         Title = dr["Title"].ToString(),
+                         Short = dr["Short"].ToString(),
+                         Full = dr["Long"].ToString(),
+                         MetaKeywords = dr["MetaKeywords"].ToString(),
+                         MetaDescription = dr["MetaDescription"].ToString(),
+                         MetaTitle = dr["MetaTitle"].ToString(),
+                         HitCount = Convert.ToInt32(dr["HitCount"]),
+                         SeoUrl = dr["Url"].ToString()
+                     }).FirstOrDefault();
 
             return View(model);
         }
