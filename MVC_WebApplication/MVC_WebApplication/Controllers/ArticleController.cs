@@ -13,13 +13,14 @@ using System.Web.Mvc;
 
 namespace MVC_WebApplication.Controllers
 {
+    [LogAuthorize("MENU-001")]
     public class ArticleController : Controller
     {
         public ActionResult Index()
         {
-
+            
             var list = new List<vmArticle>();
-
+            
             DataTable datatable = new DataTable();
 
             using (SqlConnection sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["MvcProjectEntities"].ConnectionString))
@@ -49,6 +50,8 @@ namespace MVC_WebApplication.Controllers
                         SeoUrl = dr["Url"].ToString()
                     }).ToList();
 
+            
+          
             return View(list);
         }
 
