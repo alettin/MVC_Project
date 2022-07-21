@@ -13,6 +13,7 @@ using System.Web.Mvc;
 
 namespace MVC_WebApplication.Controllers
 {
+    [LogException]
     [LogAuthorize("MENU-001")]
     public class ArticleController : Controller
     {

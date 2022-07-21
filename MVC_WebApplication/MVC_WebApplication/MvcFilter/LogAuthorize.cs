@@ -23,6 +23,8 @@ namespace MVC_WebApplication.MvcFilter
         {
             var isAuthorize = false;
             //check its roles with menuCode from database or session for action/controller. if it is ok then set isAuthorize = true
+            if (_menuCode == "MENU-001")
+                isAuthorize = true;
 
             if (isAuthorize)
             {
