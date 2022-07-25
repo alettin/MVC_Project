@@ -33,6 +33,6 @@ namespace MVC_WebApplication.Models
     {
         Login = 1,
         Action= 2,
-        Error = 3
+        Error = 3,
     }
 }

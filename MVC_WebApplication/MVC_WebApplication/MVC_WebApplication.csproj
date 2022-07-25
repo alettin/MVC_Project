@@ -173,6 +173,9 @@
     </Compile>
     <Compile Include="Models\vmArticle.cs" />
     <Compile Include="Models\_GeneralClass.cs" />
+    <Compile Include="MvcFilter\LogAction.cs" />
+    <Compile Include="MvcFilter\LogAuthorize.cs" />
+    <Compile Include="MvcFilter\LogException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -239,6 +242,7 @@
     <Content Include="Views\Article\CreateArticle.cshtml" />
     <Content Include="Views\Article\Details.cshtml" />
     <Content Include="Views\Article\Index.cshtml" />
+    <Content Include="Views\Shared\_PartialPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

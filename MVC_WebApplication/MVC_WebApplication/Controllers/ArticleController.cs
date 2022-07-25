@@ -19,7 +19,7 @@ namespace MVC_WebApplication.Controllers
     {
         public ActionResult Index()
         {
-            
+            /*
             var list = new List<vmArticle>();
             
             DataTable datatable = new DataTable();
@@ -50,10 +50,35 @@ namespace MVC_WebApplication.Controllers
                         HitCount = Convert.ToInt32(dr["HitCount"]),
                         SeoUrl = dr["Url"].ToString()
                     }).ToList();
+            */
 
-            
-          
-            return View(list);
+            using (var context = new Entities())
+            {
+                var list = context.Articles.Join(context.Categories,
+                     _article => _article.CategoryId,
+                     _category => _category.Id,
+                     (_article, _category) => new { _article, _category }).Join(context.SeoUrls,
+                     _a_c => _a_c._article.Id,
+                     _seoUrl => _seoUrl.ItemId,
+                     (_a_c, _seoUrl) => new { _a_c, _seoUrl }).
+                     Where(r => r._seoUrl.IsActive == true && r._seoUrl.SystemTable == (int)SystemTable.Article).
+                     Select(z => new vmArticle
+                     {
+                         Id = z._a_c._article.Id,
+                         Title = z._a_c._article.Title,
+                         Short = z._a_c._article.Short,
+                         Full = z._a_c._article.Long,
+                         MetaKeywords = z._a_c._article.MetaKeywords,
+                         MetaDescription = z._a_c._article.MetaDescription,
+                         MetaTitle = z._a_c._article.MetaTitle,
+                         HitCount = z._a_c._article.HitCount,
+                         SeoUrl = z._seoUrl.Url,
+                         CategoryId = z._a_c._category.Id,
+                         CategoryName = z._a_c._category.Name,
+                     }).ToList();
+                return View(list);
+            }
+           
         }
 
         public ActionResult ArticleDetails(int ItemId)
